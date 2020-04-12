@@ -1,4 +1,4 @@
-global ipTable :table[addr] of string;
+global ipTable :table[addr] of set[string];
 event http_header(c:connection,is_orig:bool,name:string,value:string){
 	local ip :addr;
 	ip=c$id$orig_h;
