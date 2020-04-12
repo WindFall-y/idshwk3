@@ -1,6 +1,6 @@
 global ipTable :table[addr] of string;
-global ip :addr;
 event http_header(c:connection,is_orig:bool,name:string,value:string){
+	local ip :addr;
 	ip=c$id$orig_h;
 	if(c$http?$user_agent){
 		local lowerip :string=to_lower(c$http$user_agent);
